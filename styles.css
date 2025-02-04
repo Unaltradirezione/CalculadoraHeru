@@ -12,8 +12,7 @@ img {
   width: 100%; /* Ocupa todo el ancho del contenedor */
   max-width: 550px; /* Ajusta el ancho máximo */
   height: 230px; /* Ajusta la altura a tu preferencia */
-  object-fit: cover; /* Evita que la imagen se deforme */
-}
+ }
 
 .container {
   max-width: 600px;
