@@ -1,98 +1,121 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
-  }
-  .container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-  }
-  h1, h2 {
-    text-align: center;
-  }
-  .input-group {
-    margin-bottom: 20px;
-  }
-  label {
-    font-weight: bold;
-  }
-  input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  button {
-    width: 100%;
-    padding: 10px;
-    font-size: 18px;
-    color: #fff;
-    background-color: #0375f8;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  button:hover {
-    background-color: #035fcf;
-  }
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+}
 
-  /* es el cuadro azul de comparativa de impuestos */
+img {
+  display: block;
+  margin: 0 auto;
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  max-width: 550px; /* Ajusta el ancho máximo */
+  height: 230px; /* Ajusta la altura a tu preferencia */
+  object-fit: cover; /* Evita que la imagen se deforme */
+}
 
-  .comparison {
-    margin-top: 20px;
-    padding: 15px;
-    background-color: #e1f2ff;
-    border: 1px solid #d2e2f0;
-    border-radius: 5px;
-  }
-  .comparison {
-    margin-top: 20px;
-    display: none;
-  }
-  .comparison table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  .comparison table, .comparison th, .comparison td {
-    border: 1px solid #ddd;
-  }
-  .comparison th, .comparison td {
-    padding: 10px;
-    text-align: center;
-  }
-  .comparison td {
-    font-weight: bold;
-  }
-  .comparison td, .comparison th {
-    text-align: right;
-  }
-  .blue-header {
-    color: #0375f8;
-    font-weight: bold;
-    text-align: center;
-  }
-  .header-comparativa {    
-    color: #020202;
-    padding: 10px;
-    font-size: 18px;
-    text-align: center;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    font-weight: bold;
-  }
-  .blue-header-table {
-    background-color: #0375f8;
-    color: #fff;
-    text-align: center;
-    font-weight: bold;
-    padding: 10px;
-  }
-  
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  color: #fff;
+  background-color: #0375f8;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #035fcf;
+}
+
+/* Comparativa de impuestos */
+.comparison {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #e1f2ff;
+  border: 1px solid #d2e2f0;
+  border-radius: 5px;
+  display: none;
+}
+
+.comparison table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.comparison table, .comparison th, .comparison td {
+  border: 1px solid #ddd;
+}
+
+.comparison th, .comparison td {
+  padding: 10px;
+  text-align: center;
+}
+
+.comparison td {
+  font-weight: bold;
+  text-align: right;
+}
+
+.blue-header {
+  color: #0375f8;
+  font-weight: bold;
+  text-align: center;
+}
+
+.header-comparativa {
+  color: #020202;
+  padding: 10px;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.blue-header-table {
+  background-color: #0375f8;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+}
+
+/* Estilos para ahorro */
+#ahorroMensual, #ahorroAnual {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+}

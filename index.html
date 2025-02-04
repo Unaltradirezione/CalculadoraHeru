@@ -8,16 +8,17 @@
 </head>
 <body>
   <div class="container">
-    <h1>Calculadora 2025</h1>
+    <img src="heruLogoDarkBlueBackgroundWhiteLogo.jpg" alt="Heru Logo">
+    <h2>Calculadora 2025</h2>
     
     <div class="input-group">
       <label for="ingresoMensual">Ingreso mensual:</label>
-      <input type="number" id="ingresoMensual" placeholder="Ingresa tu ingreso mensual">
+      <input type="number" id="ingresoMensual" placeholder="Ingresos mensuales de la actividad">
     </div>
     
     <div class="input-group">
       <label for="deducibles">Gastos del mes:</label>
-      <input type="number" id="deducibles" placeholder="Ingresa tus deducibles">
+      <input type="number" id="deducibles" placeholder="Ingresa los gastos de la actividad">
     </div>
     
     <button onclick="calcularImpuestos()">Calcular Impuestos</button>
@@ -46,12 +47,12 @@
             <td id="gastosMensualesRESICO"></td>
           </tr>
           <tr>
-            <td>IVA</td>
+            <td>IVA Mensual</td>
             <td id="ivaActividadEmpresarial"></td>
             <td id="ivaRESICO"></td>
           </tr>
           <tr>
-            <td>ISR</td>
+            <td>ISR Mensual</td>
             <td id="isrActividadEmpresarial"></td>
             <td id="isrRESICO"></td>
           </tr>
@@ -63,7 +64,8 @@
         </tbody>
       </table>
       
-      <div id="ahorroAnual" style="margin-top: 20px; text-align: center; font-weight: bold;"></div>
+      <div id="ahorroMensual"></div>
+      <div id="ahorroAnual"></div>
     </div>
   </div>
 
