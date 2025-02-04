@@ -12,7 +12,8 @@ img {
   width: 100%; /* Ocupa todo el ancho del contenedor */
   max-width: 550px; /* Ajusta el ancho máximo */
   height: 230px; /* Ajusta la altura a tu preferencia */
- }
+  object-fit: cover; /* Evita que la imagen se deforme */
+}
 
 .container {
   max-width: 600px;
@@ -86,6 +87,37 @@ button:hover {
 .comparison td {
   font-weight: bold;
   text-align: right;
+}
+
+.blue-header {
+  color: #0375f8;
+  font-weight: bold;
+  text-align: center;
+}
+
+.header-comparativa {
+  color: #020202;
+  padding: 10px;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.blue-header-table {
+  background-color: #0375f8;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+}
+
+/* Estilos para ahorro */
+#ahorroMensual, #ahorroAnual {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
 }
 
 .blue-header {
