@@ -9,10 +9,10 @@ body {
 img {
   display: block;
   margin: 0 auto;
-  width: 100%;
-  max-width: 100%; /* Se asegura de que nunca sobrepase el ancho del contenedor */
-  height: auto; /* Mantiene la proporción original sin forzar una altura fija */
-  object-fit: contain; /* Alternativa a cover para evitar cortes */
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  max-width: 550px; /* Ajusta el ancho máximo */
+  height: 230px; /* Ajusta la altura a tu preferencia */
+  object-fit: cover; /* Evita que la imagen se deforme */
 }
 
 .container {
