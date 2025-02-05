@@ -82,7 +82,7 @@ document.getElementById("isrRESICO").innerText = "$" + Math.round(resico);
 
 // Redondeo de porcentajes de ISR
 document.getElementById("porcentajeISRActividadEmpresarial").innerText = Math.round(porcentajeISRActividadEmpresarial) + "%"; // Redondeo
-document.getElementById("porcentajeISRRESICO").innerText = Math.round(porcentajeISRRESICO) + "%"; // Redondeo
+document.getElementById("porcentajeISRRESICO").innerText = porcentajeISRRESICO + "%"; // Redondeo
 
 document.getElementById("totalImpuestosActividadEmpresarial").innerText = "$" + Math.round(totalImpuestoActividadEmpresarial);
 document.getElementById("totalImpuestosRESICO").innerText = "$" + Math.round(totalImpuestoRESICO);
