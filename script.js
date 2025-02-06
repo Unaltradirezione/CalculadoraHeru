@@ -1,4 +1,5 @@
 function calcularImpuestos() {
+  // Obtener el ingreso mensual y los deducibles desde el formulario HTML
   const ingreso = parseFloat(document.getElementById("ingresoMensual").value);
   const deducibles = parseFloat(document.getElementById("deducibles").value) || 0;
 
@@ -8,14 +9,16 @@ function calcularImpuestos() {
   }
 
   const tasaIVA = 0.16;
-  const subtotalIngreso = ingreso / 1.16; // Se obtiene el subtotal dividiendo entre 1.16
-  const baseDeducibles = deducibles / 1.16; // Se ajustan los deducibles dividiéndolos entre 1.16
-  const ingresoNeto = subtotalIngreso - baseDeducibles; // Se resta el deducible ajustado
+  const subtotalIngreso = ingreso; // Se usa el total del ingreso mensual sin dividir entre 1.16
+  
+  // Ajuste de los deducibles para el cálculo de ISR
+  const baseDeducibles = parseFloat((deducibles / 1.16).toFixed(4)); // Dividir deducibles entre 1.16 para eliminar el IVA
+  const ingresoNeto = subtotalIngreso - baseDeducibles; // Restamos el deducible ajustado del ingreso total para obtener el ingreso neto
 
   let isr = 0;
   let porcentajeISRActividadEmpresarial = 0;
 
-  // Tablas de ISR para Actividad Empresarial
+  // Tablas de ISR para Actividad Empresarial (tarifas progresivas según el ingreso neto)
   const tarifasMensuales = [
     { limiteInferior: 0.01, limiteSuperior: 746.04, cuota: 0, tasa: 1.92 },
     { limiteInferior: 746.05, limiteSuperior: 6332.05, cuota: 14.32, tasa: 6.4 },
@@ -30,6 +33,7 @@ function calcularImpuestos() {
     { limiteInferior: 375975.62, limiteSuperior: Infinity, cuota: 117912.32, tasa: 35 },
   ];
 
+  // Cálculo de ISR para Actividad Empresarial
   for (const tramo of tarifasMensuales) {
     if (ingresoNeto >= tramo.limiteInferior && ingresoNeto <= tramo.limiteSuperior) {
       const excedente = ingresoNeto - tramo.limiteInferior;
@@ -39,7 +43,7 @@ function calcularImpuestos() {
     }
   }
 
-  // Cálculo de ISR para RESICO usando el subtotal del ingreso mensual
+  // Cálculo de ISR para RESICO usando el total del ingreso mensual
   const tasasRESICO = [
     { limite: 25000.00, tasa: 1.0 },
     { limite: 50000.00, tasa: 1.1 },
@@ -59,25 +63,34 @@ function calcularImpuestos() {
     }
   }
 
-  // Cálculo del IVA para ambos regímenes
-  const ivaActividadEmpresarial = subtotalIngreso * tasaIVA;
-  const ivaRESICO = subtotalIngreso * tasaIVA; // Se usa el subtotal para calcular el IVA en RESICO
-  const ivaDeducible = baseDeducibles * tasaIVA;
-  const ivaPagar = ivaActividadEmpresarial - ivaDeducible;
+  // Cálculo del IVA para ambos regímenes (Actividad Empresarial y RESICO)
+  const ivaActividadEmpresarial = subtotalIngreso * tasaIVA;  // IVA basado en el ingreso total para Actividad Empresarial
+  const ivaRESICO = subtotalIngreso * tasaIVA;  // IVA basado en el ingreso total para RESICO
+
+  // Cálculo del IVA deducible
+  const ivaDeducible = baseDeducibles * tasaIVA;  // IVA deducible calculado usando la base de los deducibles
+
+  // Restamos el IVA deducible del IVA a pagar en Actividad Empresarial
+  const ivaPagar = ivaActividadEmpresarial - ivaDeducible; 
+
+  // IVA deducible también se aplica en RESICO
+  const ivaPagarRESICO = ivaRESICO - ivaDeducible;
 
   // Cálculo del total de impuestos
-  const totalImpuestoActividadEmpresarial = isr + ivaPagar;
-  const totalImpuestoRESICO = resico + ivaRESICO;
+  const totalImpuestoActividadEmpresarial = isr + ivaPagar; // ISR + IVA a pagar (Actividad Empresarial)
+  const totalImpuestoRESICO = resico + ivaPagarRESICO; // ISR + IVA a pagar (RESICO)
+
+  // Cálculo de Ahorro Mensual y Anual
   const ahorroAnual = (totalImpuestoActividadEmpresarial - totalImpuestoRESICO) * 12;
   const ahorroMensual = totalImpuestoActividadEmpresarial - totalImpuestoRESICO;
 
-  // Mostrar valores en la tabla
+  // Mostrar resultados en la tabla
   document.getElementById("ingresoMensualValor").innerText = "$" + Math.round(ingreso);
   document.getElementById("ingresoMensualRESICO").innerText = "$" + Math.round(ingreso);
   document.getElementById("gastosMensualesValor").innerText = "$" + Math.round(deducibles);
   document.getElementById("gastosMensualesRESICO").innerText = "$" + Math.round(deducibles);
   document.getElementById("ivaActividadEmpresarial").innerText = "$" + Math.round(ivaPagar);
-  document.getElementById("ivaRESICO").innerText = "$" + Math.round(ivaRESICO);
+  document.getElementById("ivaRESICO").innerText = "$" + Math.round(ivaPagarRESICO);
   document.getElementById("isrActividadEmpresarial").innerText = "$" + Math.round(isr);
   document.getElementById("isrRESICO").innerText = "$" + Math.round(resico);
   document.getElementById("porcentajeISRActividadEmpresarial").innerText = Math.round(porcentajeISRActividadEmpresarial) + "%";
