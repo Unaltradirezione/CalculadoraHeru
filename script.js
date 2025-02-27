@@ -84,19 +84,19 @@ function calcularImpuestos() {
   const ahorroAnual = (totalImpuestoActividadEmpresarial - totalImpuestoRESICO) * 12;
   const ahorroMensual = totalImpuestoActividadEmpresarial - totalImpuestoRESICO;
 
-  // Mostrar resultados en la tabla
-  document.getElementById("ingresoMensualValor").innerText = "$" + Math.round(ingreso);
+  // Mostrar resultados en la tabla (El cambio es que primero se muestra RESICO y luego Actividad Empresarial)
   document.getElementById("ingresoMensualRESICO").innerText = "$" + Math.round(ingreso);
-  document.getElementById("gastosMensualesValor").innerText = "$" + Math.round(deducibles);
+  document.getElementById("ingresoMensualValor").innerText = "$" + Math.round(ingreso);
   document.getElementById("gastosMensualesRESICO").innerText = "$" + Math.round(deducibles);
-  document.getElementById("ivaActividadEmpresarial").innerText = "$" + Math.round(ivaPagar);
+  document.getElementById("gastosMensualesValor").innerText = "$" + Math.round(deducibles);
   document.getElementById("ivaRESICO").innerText = "$" + Math.round(ivaPagarRESICO);
-  document.getElementById("isrActividadEmpresarial").innerText = "$" + Math.round(isr);
+  document.getElementById("ivaActividadEmpresarial").innerText = "$" + Math.round(ivaPagar);
   document.getElementById("isrRESICO").innerText = "$" + Math.round(resico);
-  document.getElementById("porcentajeISRActividadEmpresarial").innerText = Math.round(porcentajeISRActividadEmpresarial) + "%";
+  document.getElementById("isrActividadEmpresarial").innerText = "$" + Math.round(isr);
   document.getElementById("porcentajeISRRESICO").innerText = porcentajeISRRESICO + "%";
-  document.getElementById("totalImpuestosActividadEmpresarial").innerText = "$" + Math.round(totalImpuestoActividadEmpresarial);
+  document.getElementById("porcentajeISRActividadEmpresarial").innerText = Math.round(porcentajeISRActividadEmpresarial) + "%";
   document.getElementById("totalImpuestosRESICO").innerText = "$" + Math.round(totalImpuestoRESICO);
+  document.getElementById("totalImpuestosActividadEmpresarial").innerText = "$" + Math.round(totalImpuestoActividadEmpresarial);
   document.getElementById("ahorroMensual").innerText = "Ahorro estimado mensual: $" + Math.round(ahorroMensual);
   document.getElementById("ahorroAnual").innerText = "Ahorro estimado anual: $" + Math.round(ahorroAnual);
   document.getElementById("comparativaImpuestos").style.display = "block";

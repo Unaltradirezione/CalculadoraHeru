@@ -5,6 +5,7 @@ body {
   background-color: #f4f4f4;
   margin: 0;
   padding: 0;
+  line-height: 1.6; /* Aumenta la legibilidad */
 }
 
 /* Contenedor principal */
@@ -12,44 +13,64 @@ body {
   max-width: 600px;
   background: white;
   margin: 30px auto;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  border-radius: 15px; /* Bordes más suaves */
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1); /* Sombra más prominente */
+  transition: box-shadow 0.3s ease; /* Transición suave en la sombra */
+}
+
+.container:hover {
+  box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.15); /* Efecto de hover  */
 }
 
 h2 {
   color: #333;
   margin-bottom: 20px;
+  font-size: 24px; /* Título un poco más grande */
+  font-weight: 600; /* Un poco más grueso para destacar */
 }
 
 /* Estilos para imágenes */
 img {
   display: block;
   margin: 0 auto;
-  width: 100%; /* Ocupa todo el ancho del contenedor */
-  max-width: 550px; /* Ajusta el ancho máximo */
-  height: 230px; /* Ajusta la altura a tu preferencia */
-  object-fit: cover; /* Evita que la imagen se deforme */
+  width: 100%;
+  max-width: 550px;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 0.3s ease-in-out; /* Transición de imagen */
+}
+
+img:hover {
+  transform: scale(1.05); /* Efecto zoom en la imagen al pasar el ratón */
 }
 
 /* Estilos para inputs y etiquetas */
 .input-group {
   text-align: left;
-  margin-bottom: 10px;
+  margin-bottom: 15px; /* Más espacio entre los campos */
 }
 
 .input-group label {
   display: block;
   font-weight: bold;
   margin-bottom: 5px;
+  font-size: 16px; /* Tamaño de fuente un poco más grande */
 }
 
 .input-group input {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 8px; /* Bordes más suaves */
   font-size: 16px;
+  transition: border-color 0.3s ease; /* Transición suave para el borde */
+}
+
+.input-group input:focus {
+  border-color: #007bff; /* Color de borde en el foco */
+  outline: none; /* Eliminar el outline por defecto */
 }
 
 /* Botón de cálculo */
@@ -58,14 +79,15 @@ button {
   background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 16px;
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.3s ease; /* Transición suave */
 }
 
 button:hover {
   background-color: #0056b3;
+  transform: scale(1.05); /* Efecto de zoom en el botón */
 }
 
 /* Resultados */
@@ -74,6 +96,11 @@ button:hover {
   font-size: 18px;
   font-weight: bold;
   color: #333;
+  transition: color 0.3s ease; /* Transición suave */
+}
+
+.result:hover {
+  color: #0056b3; /* Cambio de color al pasar el ratón */
 }
 
 /* Tabla de comparación */
@@ -82,7 +109,8 @@ button:hover {
   margin-top: 30px;
   padding: 15px;
   background: #e9f5ff;
-  border-radius: 10px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Sombra más suave */
 }
 
 .header-comparativa {
@@ -96,21 +124,26 @@ table {
   width: 100%;
   border-collapse: collapse;
   background: white;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px; /* Bordes más suaves */
   overflow: hidden;
 }
 
 th, td {
   border: 1px solid #ddd;
-  padding: 12px;
+  padding: 14px;
   text-align: center;
   font-size: 16px;
+  transition: background-color 0.3s ease; /* Transición para el fondo */
 }
 
 th {
   background-color: #007bff;
   color: white;
+}
+
+th:hover, td:hover {
+  background-color: #f0f8ff; /* Fondo claro al pasar el ratón */
 }
 
 .blue-header-table {
@@ -123,14 +156,15 @@ th {
   font-size: 18px;
   font-weight: bold;
   margin-top: 15px;
-  color: #007bff
+  color: #007bff;
+  transition: color 0.3s ease; /* Transición suave */
 }
 
 /* Responsividad */
 @media (max-width: 600px) {
   .container {
     width: 90%;
-    padding: 15px;
+    padding: 20px;
   }
 
   table {
@@ -138,7 +172,7 @@ th {
   }
 
   th, td {
-    padding: 8px;
+    padding: 10px;
   }
 }
 
