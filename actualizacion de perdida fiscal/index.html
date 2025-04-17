@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualización de Pérdida Fiscal</title>
+    <link rel="stylesheet" href="style.css"> <!-- Estilos externos -->
+</head>
+
+<body>
+    <div class="container">
+        <h2>Actualización de Pérdida Fiscal</h2>
+        <img src="heruLogoDarkBlueBackgroundWhiteLogo.jpg" alt="Logo" class="logo"> <!-- Imagen de logo -->
+
+        <!-- Formulario para la actualización de pérdida fiscal -->
+        <form id="formulario">
+            <div class="input-group">
+                <label for="perdida">Pérdida Fiscal Original ($):</label>
+                <input type="number" id="perdida" placeholder="Ingresa la pérdida fiscal original" required>
+            </div>
+
+            <div class="input-group">
+                <label for="anio_inicio">Año en que se generó la pérdida:</label>
+                <select id="anio_inicio" required>
+                    <option value="">Selecciona un año</option>
+                    <script>
+                        for (let i = 2015; i <= 2025; i++) {
+                            document.write(`<option value="${i}">${i}</option>`);
+                        }
+                    </script>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="anio_final">Año hasta el cual se actualizará la pérdida:</label>
+                <select id="anio_final" required>
+                    <option value="">Selecciona un año</option>
+                    <script>
+                        for (let i = 2015; i <= 2025; i++) {
+                            document.write(`<option value="${i}">${i}</option>`);
+                        }
+                    </script>
+                </select>
+            </div>
+
+            <button class="search-btn" type="button" onclick="calcularActualizacion()">Calcular Actualización</button>
+            <button class="search-btn" type="button" onclick="calcularPorAnio()">Calcular por Año</button>
+            <button class="search-btn" type="button" onclick="calcularSegundoAnio()">Calcular Pérdida Fiscal para
+                Segundo Año</button>
+            <button class="search-btn" type="button" onclick="calcularTercerAnio()">Calcular Pérdida Fiscal para Tercer
+                Año al decimo</button>
+        </form>
+
+        <!-- Resultados para la actualización de pérdida fiscal -->
+        <div id="resultado" class="resultado" style="display: none;">
+            <h3>Resultado de la Actualización de Pérdida Fiscal para Declaración Anual</h3>
+            <table border="1">
+                <tr>
+                    <th>Año Inicial</th>
+                    <th>Año Final</th>
+                    <th>INPC (julio)</th>
+                    <th>INPC (diciembre)</th>
+                    <th>Factor de Actualización</th>
+                    <th>Pérdida Fiscal Actualizada</th>
+                </tr>
+                <tbody id="perdida_actualizada_resultado_anual"></tbody>
+            </table>
+        </div>
+
+        <!-- Nueva Tabla para calcular la pérdida fiscal por año -->
+        <div id="resultadoPorAnio" class="resultado" style="display: none;">
+            <h3>Cálculo por Año</h3>
+            <table border="1">
+                <tr>
+                    <th>Año Inicial</th>
+                    <th>Año Final</th>
+                    <th>INPC (julio)</th>
+                    <th>INPC (diciembre)</th>
+                    <th>Factor de Actualización</th>
+                    <th>Pérdida Fiscal Actualizada</th>
+                </tr>
+                <tbody id="perdida_actualizada_resultado_anio"></tbody>
+            </table>
+        </div>
+
+        <!-- Nueva Tabla para calcular la pérdida fiscal de segundo año -->
+        <div id="resultadoSegundoAnio" class="resultado" style="display: none;">
+            <h3>Cálculo de Pérdida Fiscal para Segundo Año</h3>
+            <table border="1">
+                <tr>
+                    <th>Año Inicial</th>
+                    <th>Año Final</th>
+                    <th>INPC (Diciembre)</th>
+                    <th>INPC (Junio)</th>
+                    <th>Factor de Actualización</th>
+                    <th>Pérdida Fiscal Actualizada</th>
+                </tr>
+                <tbody id="perdida_fiscal_segundo_anio"></tbody>
+            </table>
+        </div>
+
+        <!-- Nueva Tabla para calcular la pérdida fiscal para tercer año -->
+        <div id="resultadoTercerAnio" class="resultado" style="display: none;">
+            <h3>Cálculo de Pérdida Fiscal para Tercer Año al decimo</h3>
+            <table border="1">
+                <tr>
+                    <th>Año Inicial</th>
+                    <th>Año Final</th>
+                    <th>INPC (junio 2023)</th>
+                    <th>INPC (junio 2024)</th>
+                    <th>Factor de Actualización</th>
+                    <th>Pérdida Fiscal Actualizada</th>
+                </tr>
+                <tbody id="perdida_fiscal_tercer_anio"></tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <footer>
+        <p class="nota-legal">
+            La actualización de la pérdida fiscal sigue los lineamientos establecidos por la legislación
+            vigente.
+        </p>
+    </footer>
+    </div>
+
+    <script src="script.js"></script> <!-- Archivo JavaScript externo -->
+</body>
+
+</html>

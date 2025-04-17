@@ -1,0 +1,94 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background-color: #f4f4f9; /* Un color de fondo más suave */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: #333; /* Color base de texto */
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 700px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1); /* Sombra más suave y prominente */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.container:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 12px 35px rgba(0, 0, 0, 0.2); /* Aumenta la sombra al hacer hover */
+}
+
+/* Títulos */
+h2 {
+    color: #444;
+    margin-bottom: 25px;
+    font-size: 26px;
+    font-weight: 600; /* Aumentado el peso de la fuente */
+}
+
+/* Estilos para imágenes */
+img {
+    width: 120px;
+    margin-bottom: 20px;
+    border-radius: 50%; /* Redondear la imagen */
+}
+
+/* Agrupación de inputs */
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+    width: 100%;
+}
+
+/* Inputs */
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Estilos del botón */
+.search-btn {
+    padding: 12px 20px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.search-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos de los resultados */
+.resultado {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nota-legal {
+    font-size: 12px;
+    color: #777;
+    margin-top: 30px;
+}
