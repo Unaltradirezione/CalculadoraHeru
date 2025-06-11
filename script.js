@@ -52,6 +52,16 @@ function calcularImpuestos() {
     { limite: 3500000.00, tasa: 2.5 },
   ];
 
+                                  // TASAS RESICO ANUAL
+//   // Cálculo de ISR para RESICO (Personas Físicas) según ingresos anuales sin IVA
+// const tasasRESICO = [
+//   { montoAnual: 300000.00, tasa: 1.00 },       // Hasta $300,000.00
+//   { montoAnual: 600000.00, tasa: 1.10 },       // Hasta $600,000.00
+//   { montoAnual: 1000000.00, tasa: 1.50 },      // Hasta $1,000,000.00
+//   { montoAnual: 2500000.00, tasa: 2.00 },      // Hasta $2,500,000.00
+//   { montoAnual: 3500000.00, tasa: 2.50 },      // Hasta $3,500,000.00
+// ];
+
   let resico = 0;
   let porcentajeISRRESICO = 0;
 
